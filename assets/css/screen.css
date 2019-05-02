@@ -24,6 +24,35 @@ h1 {
   margin-left: .666em;
 }
 /*Code for navigation*/
+
+#navigation {
+  border-bottom: 3px solid #47c9af;
+  line-height: 1;
+}
+#navigation a {
+  background-color: #993333;
+  border-radius: 0.5em;
+  display: flex;
+  flex-wrap: row wrap;
+  padding: 0.65625em 0;
+  text-decoration: none;
+}
+#navigation li {
+  flex: 1 1 25%;
+}
+#navigation a:hover {
+  background: #FF9999;
+}
+nav a:active,
+#home #nav-hom,
+#other-home #nav-int,
+#got-home #nav-got,
+#about-home #nav-abo,
+#lotr-home #nav-lot {
+  color: black;
+  background: #FF9999;
+}
+
 /*Code for main content in main index*/
 
 
