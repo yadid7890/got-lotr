@@ -54,4 +54,36 @@ a img {
 elements-of-type(html5-block) {
   display: block; }
 
+/* line 45, ../mysite/assets/css/scss/screen.scss */
+h1 {
+  font-size: 1.777em;
+  line-height: 3em; }
+
+/* line 48, ../mysite/assets/css/scss/screen.scss */
+p {
+  font-size: 1em;
+  line-height: 1.5em; }
+
+/* line 53, ../mysite/assets/css/scss/screen.scss */
+#got-books img {
+  height: 2000px;
+  width: 1500px; }
+
+/* line 61, ../mysite/assets/css/scss/screen.scss */
+footer {
+  background-image: url("../img/space-wall.jpg");
+  background-repeat: repeat-x;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.30201em;
+  padding-bottom: 5%;
+  padding-top: 5%; }
+  /* line 71, ../mysite/assets/css/scss/screen.scss */
+  footer img {
+    width: 50px;
+    height: 50px;
+    display: block;
+    position: absolute; }
+
 /*# sourceMappingURL=screen.css.map */

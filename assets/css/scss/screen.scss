@@ -1,2 +1,90 @@
 @import "bourbon";
 @import "compass/reset";
+
+//!variables
+$foot-text: #000;
+
+$base-font-size: 1em;
+$base-line-height: $base-font-size * 1.5;
+
+$type-settings: (
+  -1: (
+    font-size: 0.75em,
+    line-height: $base-line-height
+  ),
+  0: (
+    font-size: 1em,
+    line-height: $base-line-height
+  ),
+  1: (
+    font-size: 1.333em,
+    line-height: $base-line-height * 2
+  ),
+  2: (
+    font-size: 1.777em,
+    line-height: $base-line-height * 2
+  )
+);
+//!more sass
+@function type-scale($level) {
+  @return map-get(
+    map-get($type-settings, $level), 'font-size');
+}
+
+@function line-height($level) {
+  @return map-get(
+    map-get($type-settings, $level), 'line-height');
+}
+
+@mixin type-setting($level) {
+  font-size: type-scale($level);
+  line-height: line-height($level);
+}
+
+@mixin absolute($top: null, $right: null, $bottom: null, $left: null)
+{
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+//.foo {
+//@include absolute($top: 13px, $left: 37px);}
+
+
+h1 {
+  @include type-setting(2);
+}
+p {
+  @include type-setting(0);
+}
+
+//!size images from game of thrones books
+#got-books img {
+  height: 2000px;
+  width: 1500px;
+}
+
+
+
+
+//!footer code
+footer {
+  background-image: url("../img/space-wall.jpg");
+  background-repeat: repeat-x;
+  color: $foot-text;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.30201em;
+  padding-bottom: 5%;
+  padding-top: 5%;
+
+  img {
+    width: 50px;
+    height: 50px;
+    display: block;
+    position: absolute;
+  }
+}
