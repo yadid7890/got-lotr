@@ -54,22 +54,109 @@ a img {
 elements-of-type(html5-block) {
   display: block; }
 
-/* line 45, ../mysite/assets/css/scss/screen.scss */
-h1 {
-  font-size: 1.777em;
-  line-height: 3em; }
-
-/* line 48, ../mysite/assets/css/scss/screen.scss */
+/* line 56, ../mysite/assets/css/scss/screen.scss */
 p {
   font-size: 1em;
   line-height: 1.5em; }
 
-/* line 53, ../mysite/assets/css/scss/screen.scss */
-#got-books img {
-  height: 2000px;
-  width: 1500px; }
+/* line 59, ../mysite/assets/css/scss/screen.scss */
+figcaption {
+  font-size: 1.5em;
+  line-height: 1em; }
 
-/* line 61, ../mysite/assets/css/scss/screen.scss */
+/* line 62, ../mysite/assets/css/scss/screen.scss */
+h1 {
+  font-size: 2em;
+  line-height: 0.75em;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+  margin-right: 0.75;
+  margin-left: 0.75em;
+  padding: .3em .8em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #58a linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+  border-radius: .2em;
+  box-shadow: 0 0.05em 0.25em rgba(0, 0, 0, 0.5);
+  color: white;
+  text-shadow: 0 -0.05em 0.05em rgba(0, 0, 0, 0.5); }
+
+/* line 76, ../mysite/assets/css/scss/screen.scss */
+h2 {
+  font-size: 2.5em;
+  line-height: 0.6em;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+  margin-right: 0.6em;
+  margin-left: 0.6em; }
+
+/* line 83, ../mysite/assets/css/scss/screen.scss */
+h3 {
+  font-size: 3em;
+  line-height: 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-right: 0.5em;
+  margin-left: 0.5em; }
+
+/* line 90, ../mysite/assets/css/scss/screen.scss */
+h4 {
+  font-size: 3.5em;
+  line-height: 0.429;
+  margin-top: 0.429em;
+  margin-bottom: 0.429em;
+  margin-right: 0.429em;
+  margin-left: 0.429em; }
+
+/* line 98, ../mysite/assets/css/scss/screen.scss */
+html {
+  background: #659;
+  background-image: radial-gradient(tan 20%, transparent 0), radial-gradient(tan 20%, transparent 0);
+  background-size: 10px 10px;
+  background-position: 0 0, 6px 45px; }
+
+/* line 106, ../mysite/assets/css/scss/screen.scss */
+img {
+  height: 30%;
+  width: 30%; }
+
+/* line 114, ../mysite/assets/css/scss/screen.scss */
+#navigation {
+  display: flex;
+  flex-wrap: row wrap;
+  font-size: 1.5em;
+  line-height: 1em; }
+
+/* line 119, ../mysite/assets/css/scss/screen.scss */
+#main-nav li {
+  flex: 1 1 25%; }
+
+/* line 122, ../mysite/assets/css/scss/screen.scss */
+#main-nav a {
+  /*nav element*/
+  background-color: #993333;
+  border: 1px solid #993333;
+  border-radius: 0.5em;
+  display: block;
+  padding: 0.65625em 0;
+  /*10.5px/16px=.65625em    .65625em is for top and bottom, 0 is for left and right*/
+  text-align: center;
+  text-decoration: none; }
+  /* line 130, ../mysite/assets/css/scss/screen.scss */
+  #main-nav a:hover {
+    background: #663333; }
+
+/* line 134, ../mysite/assets/css/scss/screen.scss */
+nav a:active,
+#home #nav-hom,
+#skil #nav-ski,
+#proj #nav-pro,
+#caps #nav-cap,
+#cour #nav-edu,
+#educ #nav-edu {
+  background: #663333;
+  color: white; }
+
+/* line 146, ../mysite/assets/css/scss/screen.scss */
 footer {
   background-image: url("../img/space-wall.jpg");
   background-repeat: repeat-x;
@@ -79,7 +166,7 @@ footer {
   line-height: 1.30201em;
   padding-bottom: 5%;
   padding-top: 5%; }
-  /* line 71, ../mysite/assets/css/scss/screen.scss */
+  /* line 156, ../mysite/assets/css/scss/screen.scss */
   footer img {
     width: 50px;
     height: 50px;

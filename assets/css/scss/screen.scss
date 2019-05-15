@@ -4,25 +4,30 @@
 //!variables
 $foot-text: #000;
 
-$base-font-size: 1em;
-$base-line-height: $base-font-size * 1.5;
-
 $type-settings: (
-  -1: (
-    font-size: 0.75em,
-    line-height: $base-line-height
-  ),
   0: (
-    font-size: 1em,
-    line-height: $base-line-height
+    font-size: 1.0em,
+    line-height: 1.5em
   ),
   1: (
-    font-size: 1.333em,
-    line-height: $base-line-height * 2
+    font-size: 1.5em,
+    line-height: 1em
   ),
   2: (
-    font-size: 1.777em,
-    line-height: $base-line-height * 2
+    font-size: 2.0em,
+    line-height: 0.75em
+  ),
+  3: (
+    font-size: 2.5em,
+    line-height: 0.6em
+  ),
+  4: (
+    font-size: 3.0em,
+    line-height: 0.5em
+  ),
+  5: (
+    font-size: 3.5em,
+    line-height: 0.429
   )
 );
 //!more sass
@@ -30,17 +35,14 @@ $type-settings: (
   @return map-get(
     map-get($type-settings, $level), 'font-size');
 }
-
 @function line-height($level) {
   @return map-get(
     map-get($type-settings, $level), 'line-height');
 }
-
 @mixin type-setting($level) {
   font-size: type-scale($level);
   line-height: line-height($level);
 }
-
 @mixin absolute($top: null, $right: null, $bottom: null, $left: null)
 {
   position: absolute;
@@ -49,26 +51,96 @@ $type-settings: (
   bottom: $bottom;
   left: $left;
 }
-
 //.foo {
 //@include absolute($top: 13px, $left: 37px);}
-
-
-h1 {
-  @include type-setting(2);
-}
 p {
   @include type-setting(0);
 }
-
-//!size images from game of thrones books
-#got-books img {
-  height: 2000px;
-  width: 1500px;
+figcaption {
+  @include type-setting(1);
 }
+h1 {
+  @include type-setting(2);
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+  margin-right: 0.75;
+  margin-left: 0.75em;
+  padding: .3em .8em;
+  border: 1px solid rgba(0,0,0,.1);
+  background: #58a linear-gradient(hsla(0,0%,100%,.2), transparent);
+  border-radius: .2em;
+  box-shadow: 0 .05em .25em rgba(0,0,0,.5);
+  color: white;
+  text-shadow: 0 -.05em .05em rgba(0,0,0,.5);
+}
+h2 {
+  @include type-setting(3);
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+  margin-right: 0.6em;
+  margin-left: 0.6em;
+}
+h3 {
+  @include type-setting(4);
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+}
+h4 {
+  @include type-setting(5);
+  margin-top: 0.429em;
+  margin-bottom: 0.429em;
+  margin-right: 0.429em;
+  margin-left: 0.429em;
+}
+//!background code for pages
+html {
+  background: #659;
+  background-image: radial-gradient(tan 20%, transparent 0),
+                  radial-gradient(tan 20%, transparent 0);
+                  background-size: 10px 10px;
+                  background-position: 0 0, 6px 45px;
+}
+//!size images for books
+img {
+  height: 30%;
+  width: 30%
+}
+//!code for main-nav
+$color_one: #993333;
+$color_two: #663333;
 
-
-
+#navigation { //!nav
+  display: flex;
+  flex-wrap: row wrap;
+  @include type-setting(1);
+}
+#main-nav li { //!
+  flex: 1 1 25%;
+}
+#main-nav a {/*nav element*/
+  background-color: $color_one;
+  border: 1px solid $color_one;
+  border-radius: 0.5em;
+  display: block;
+  padding: 0.65625em 0; /*10.5px/16px=.65625em    .65625em is for top and bottom, 0 is for left and right*/
+  text-align: center;
+  text-decoration: none;
+    &:hover {
+      background: $color_two;
+    }
+}
+nav a:active,
+#home #nav-hom,
+#skil #nav-ski,
+#proj #nav-pro,
+#caps #nav-cap,
+#cour #nav-edu,
+#educ #nav-edu {
+  background: $color_two;
+  color: white;
+}
 
 //!footer code
 footer {
