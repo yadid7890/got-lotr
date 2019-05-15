@@ -53,25 +53,88 @@ $type-settings: (
 }
 //.foo {
 //@include absolute($top: 13px, $left: 37px);}
+$color1: hsla(198%, 63%, 38%, 1);//dark gree
+$color2: hsla(215%, 28%, 47%, 1);//dark blue
+$color3: hsla(196%, 36%, 90%, 1); //!text white
+$color4: hsla(0%, 40%, 91%, 1); //!figcaptions pinkish
+$color5: hsla(47%, 78%, 59%, 1);//gold
+//!background code for pages
+main {
+  background: $color2;
+  background-image: radial-gradient($color5 30%, transparent 0),
+                  radial-gradient($color5 20%, transparent 0);
+                  background-size: 10px 10px;
+                  background-position: 0 0, 6px 45px;
+}
+header {
+  background-image: url("../img/space-wall.jpg");
+  background-repeat: repeat-x;
+}
+//!code for main-nav
+#navigation { //!nav
+  display: flex;
+  flex-wrap: row wrap;
+  @include type-setting(0);
+}
+#main-nav li { //!
+  flex: 1 1 25%;
+}
+#main-nav a {/*nav element*/
+  background-color: $color2;
+  border: 1px solid $color1;
+  border-radius: 0.5em;
+  color: $color4;
+  display: block;
+  padding: 0.65625em 0; /*10.5px/16px=.65625em    .65625em is for top and bottom, 0 is for left and right*/
+  text-align: center;
+  text-decoration: none;
+    &:hover {
+      background: $color5;
+    }
+}
+nav a:active,
+#home #nav-hom,
+#lotr-home #nav-lot,
+#got-home #nav-got,
+#about-home #nav-abo,
+#other-home #nav-int {
+  background: $color5;
+  color: $color3;
+}
+//!font sizes for elements
 p {
   @include type-setting(0);
+  border: 50px solid hsla(0,0%,100%,.5);
+  background: hsla(47%, 78%, 59%, .8);
+  background-clip: padding-box;
+  padding: 1.5em;
+}
+#got-home p,
+#lotr-home p,
+#other-home p {
+  @include type-setting(1);
+  border: 30px solid hsla(0,0%,100%,.5);
+  padding: 1.5em;
 }
 figcaption {
   @include type-setting(1);
+  border: 20px solid hsla(0,0%,100%,.5);
+  background: $color5;
+  background-clip: padding-box;
+  max-width: 18em;
+  margin-bottom: 1.0em;
+  margin-right: 1.0em;
+  margin-left: 1.0em;
+  padding: 0.3em;
+  text-align: center;
 }
 h1 {
   @include type-setting(2);
-  margin-top: 0.75em;
-  margin-bottom: 0.75em;
-  margin-right: 0.75;
-  margin-left: 0.75em;
-  padding: .3em .8em;
-  border: 1px solid rgba(0,0,0,.1);
-  background: #58a linear-gradient(hsla(0,0%,100%,.2), transparent);
-  border-radius: .2em;
-  box-shadow: 0 .05em .25em rgba(0,0,0,.5);
-  color: white;
-  text-shadow: 0 -.05em .05em rgba(0,0,0,.5);
+  border: 50px solid hsla(0,0%,100%,.5);
+  background: $color5;
+  background-clip: padding-box;
+  max-width: 18em;
+  padding: 1.5em;
 }
 h2 {
   @include type-setting(3);
@@ -79,6 +142,11 @@ h2 {
   margin-bottom: 0.6em;
   margin-right: 0.6em;
   margin-left: 0.6em;
+  border: 50px solid hsla(0,0%,100%,.5);
+  background: $color5;
+  background-clip: padding-box;
+  max-width: 18em;
+  padding: 0.3em;
 }
 h3 {
   @include type-setting(4);
@@ -94,69 +162,55 @@ h4 {
   margin-right: 0.429em;
   margin-left: 0.429em;
 }
-//!background code for pages
-html {
-  background: #659;
-  background-image: radial-gradient(tan 20%, transparent 0),
-                  radial-gradient(tan 20%, transparent 0);
-                  background-size: 10px 10px;
-                  background-position: 0 0, 6px 45px;
-}
 //!size images for books
 img {
-  height: 30%;
-  width: 30%
+  padding-left: 5%;
+  max-width: 90%;
 }
-//!code for main-nav
-$color_one: #993333;
-$color_two: #663333;
-
-#navigation { //!nav
+//!code for got link-photos-->flex-wrap
+#nav-images { //!ul element
   display: flex;
-  flex-wrap: row wrap;
-  @include type-setting(1);
-}
-#main-nav li { //!
-  flex: 1 1 25%;
-}
-#main-nav a {/*nav element*/
-  background-color: $color_one;
-  border: 1px solid $color_one;
-  border-radius: 0.5em;
-  display: block;
-  padding: 0.65625em 0; /*10.5px/16px=.65625em    .65625em is for top and bottom, 0 is for left and right*/
-  text-align: center;
-  text-decoration: none;
-    &:hover {
-      background: $color_two;
+  flex-wrap: wrap;
+  padding: 5px;
+    li {
+      flex: 1 1 400px;
+    }
+    img {
+      max-width: 90%;
+      padding-left: 5%;
     }
 }
-nav a:active,
-#home #nav-hom,
-#skil #nav-ski,
-#proj #nav-pro,
-#caps #nav-cap,
-#cour #nav-edu,
-#educ #nav-edu {
-  background: $color_two;
-  color: white;
-}
-
 //!footer code
 footer {
+  @include type-setting(0);
   background-image: url("../img/space-wall.jpg");
   background-repeat: repeat-x;
-  color: $foot-text;
+  color: $color2;
   display: flex;
   flex-direction: column;
-  line-height: 1.30201em;
   padding-bottom: 5%;
   padding-top: 5%;
-
+    #contact-info {
+      color: #90bd31;
+      margin-top: 20%;
+      text-align: center;
+    }
+    #github {
+      padding-left: 15%;
+    }
+    #linked-in {
+      padding-left: 75%;
+      margin-top: 5%;
+    }
+    #email-icon {
+      padding-left: 45%;
+      margin-top: 5%;
+    }
   img {
     width: 50px;
     height: 50px;
     display: block;
+    margin-top: 5%;
     position: absolute;
   }
 }
