@@ -71,29 +71,34 @@ header {
   display: flex;
   flex-wrap: row wrap;
   font-size: 1em;
-  line-height: 1.5em; }
+  line-height: 1.5em;
+  border-bottom: 3px solid #47c9af; }
 
-/* line 79, ../mysite/assets/css/scss/screen.scss */
+/* line 80, ../mysite/assets/css/scss/screen.scss */
 #main-nav li {
   flex: 1 1 25%; }
 
-/* line 82, ../mysite/assets/css/scss/screen.scss */
+/* line 83, ../mysite/assets/css/scss/screen.scss */
 #main-nav a {
   /*nav element*/
   background-color: #567299;
-  border: 1px solid #24799e;
-  border-radius: 0.5em;
   color: #f1dfdf;
   display: block;
   padding: 0.65625em 0;
   /*10.5px/16px=.65625em    .65625em is for top and bottom, 0 is for left and right*/
   text-align: center;
-  text-decoration: none; }
-  /* line 91, ../mysite/assets/css/scss/screen.scss */
+  text-decoration: none;
+  z-index: 2;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease; }
+  /* line 96, ../mysite/assets/css/scss/screen.scss */
   #main-nav a:hover {
     background: #e8c545; }
 
-/* line 95, ../mysite/assets/css/scss/screen.scss */
+/* line 100, ../mysite/assets/css/scss/screen.scss */
 nav a:active,
 #home #nav-hom,
 #lotr-home #nav-lot,
@@ -103,7 +108,29 @@ nav a:active,
   background: #e8c545;
   color: #dceaef; }
 
-/* line 105, ../mysite/assets/css/scss/screen.scss */
+/* line 109, ../mysite/assets/css/scss/screen.scss */
+nav a:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 120%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  content: "";
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  -webkit-transform: perspective(5px) rotateX(2deg);
+  -webkit-transform-origin: bottom;
+  -moz-transform: perspective(5px) rotateX(2deg);
+  -moz-transform-origin: bottom;
+  transform: perspective(5px) rotateX(2deg);
+  transform-origin: bottom; }
+
+/* line 131, ../mysite/assets/css/scss/screen.scss */
 p {
   font-size: 1em;
   line-height: 1.5em;
@@ -112,7 +139,7 @@ p {
   background-clip: padding-box;
   padding: 1.5em; }
 
-/* line 112, ../mysite/assets/css/scss/screen.scss */
+/* line 138, ../mysite/assets/css/scss/screen.scss */
 #got-home p,
 #lotr-home p,
 #other-home p {
@@ -121,7 +148,7 @@ p {
   border: 30px solid rgba(255, 255, 255, 0.5);
   padding: 1.5em; }
 
-/* line 119, ../mysite/assets/css/scss/screen.scss */
+/* line 145, ../mysite/assets/css/scss/screen.scss */
 figcaption {
   font-size: 1.5em;
   line-height: 1em;
@@ -135,7 +162,7 @@ figcaption {
   padding: 0.3em;
   text-align: center; }
 
-/* line 131, ../mysite/assets/css/scss/screen.scss */
+/* line 157, ../mysite/assets/css/scss/screen.scss */
 h1 {
   font-size: 2em;
   line-height: 0.75em;
@@ -145,7 +172,7 @@ h1 {
   max-width: 18em;
   padding: 1.5em; }
 
-/* line 139, ../mysite/assets/css/scss/screen.scss */
+/* line 165, ../mysite/assets/css/scss/screen.scss */
 h2 {
   font-size: 2.5em;
   line-height: 0.6em;
@@ -159,7 +186,7 @@ h2 {
   max-width: 18em;
   padding: 0.3em; }
 
-/* line 151, ../mysite/assets/css/scss/screen.scss */
+/* line 177, ../mysite/assets/css/scss/screen.scss */
 h3 {
   font-size: 3em;
   line-height: 0.5em;
@@ -168,7 +195,7 @@ h3 {
   margin-right: 0.5em;
   margin-left: 0.5em; }
 
-/* line 158, ../mysite/assets/css/scss/screen.scss */
+/* line 184, ../mysite/assets/css/scss/screen.scss */
 h4 {
   font-size: 3.5em;
   line-height: 0.429;
@@ -177,25 +204,25 @@ h4 {
   margin-right: 0.429em;
   margin-left: 0.429em; }
 
-/* line 166, ../mysite/assets/css/scss/screen.scss */
+/* line 192, ../mysite/assets/css/scss/screen.scss */
 img {
   padding-left: 5%;
   max-width: 90%; }
 
-/* line 171, ../mysite/assets/css/scss/screen.scss */
+/* line 197, ../mysite/assets/css/scss/screen.scss */
 #nav-images {
   display: flex;
   flex-wrap: wrap;
   padding: 5px; }
-  /* line 175, ../mysite/assets/css/scss/screen.scss */
+  /* line 201, ../mysite/assets/css/scss/screen.scss */
   #nav-images li {
     flex: 1 1 400px; }
-  /* line 178, ../mysite/assets/css/scss/screen.scss */
+  /* line 204, ../mysite/assets/css/scss/screen.scss */
   #nav-images img {
     max-width: 90%;
     padding-left: 5%; }
 
-/* line 184, ../mysite/assets/css/scss/screen.scss */
+/* line 210, ../mysite/assets/css/scss/screen.scss */
 footer {
   font-size: 1em;
   line-height: 1.5em;
@@ -206,23 +233,23 @@ footer {
   flex-direction: column;
   padding-bottom: 5%;
   padding-top: 5%; }
-  /* line 193, ../mysite/assets/css/scss/screen.scss */
+  /* line 219, ../mysite/assets/css/scss/screen.scss */
   footer #contact-info {
     color: #90bd31;
     margin-top: 20%;
     text-align: center; }
-  /* line 198, ../mysite/assets/css/scss/screen.scss */
+  /* line 224, ../mysite/assets/css/scss/screen.scss */
   footer #github {
     padding-left: 15%; }
-  /* line 201, ../mysite/assets/css/scss/screen.scss */
+  /* line 227, ../mysite/assets/css/scss/screen.scss */
   footer #linked-in {
     padding-left: 75%;
     margin-top: 5%; }
-  /* line 205, ../mysite/assets/css/scss/screen.scss */
+  /* line 231, ../mysite/assets/css/scss/screen.scss */
   footer #email-icon {
     padding-left: 45%;
     margin-top: 5%; }
-  /* line 209, ../mysite/assets/css/scss/screen.scss */
+  /* line 235, ../mysite/assets/css/scss/screen.scss */
   footer img {
     width: 50px;
     height: 50px;
