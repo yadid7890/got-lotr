@@ -59,7 +59,7 @@ $color3: hsla(196%, 36%, 90%, 1); //!text white
 $color4: hsla(0%, 40%, 91%, 1); //!figcaptions pinkish
 $color5: hsla(47%, 78%, 59%, 1);//gold
 //!background code for pages
-main {
+body {
   background: $color2;
   background-image: radial-gradient($color5 30%, transparent 0),
                   radial-gradient($color5 20%, transparent 0);
@@ -130,16 +130,20 @@ nav a:after {
 //!font sizes for elements
 p {
   @include type-setting(0);
-  border: 50px solid hsla(0,0%,100%,.5);
+  border: hsla(0,0%,100%,.5);
+  margin-top: 5%;
+  margin-bottom: 5%;
   background: hsla(47%, 78%, 59%, .8);
   background-clip: padding-box;
   padding: 1.5em;
 }
 #got-home p,
 #lotr-home p,
-#other-home p {
+html#other-home body main section#dogs p {
   @include type-setting(1);
-  border: 30px solid hsla(0,0%,100%,.5);
+  border: hsla(0,0%,100%,.5);
+  margin-top: 5%;
+  margin-bottom: 5%;
   padding: 1.5em;
 }
 figcaption {

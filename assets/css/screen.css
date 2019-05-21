@@ -55,7 +55,7 @@ elements-of-type(html5-block) {
   display: block; }
 
 /* line 62, ../mysite/assets/css/scss/screen.scss */
-main {
+body {
   background: #567299;
   background-image: radial-gradient(#e8c545 30%, transparent 0), radial-gradient(#e8c545 20%, transparent 0);
   background-size: 10px 10px;
@@ -134,21 +134,25 @@ nav a:after {
 p {
   font-size: 1em;
   line-height: 1.5em;
-  border: 50px solid rgba(255, 255, 255, 0.5);
+  border: rgba(255, 255, 255, 0.5);
+  margin-top: 5%;
+  margin-bottom: 5%;
   background: rgba(232, 197, 69, 0.8);
   background-clip: padding-box;
   padding: 1.5em; }
 
-/* line 138, ../mysite/assets/css/scss/screen.scss */
+/* line 140, ../mysite/assets/css/scss/screen.scss */
 #got-home p,
 #lotr-home p,
-#other-home p {
+html#other-home body main section#dogs p {
   font-size: 1.5em;
   line-height: 1em;
-  border: 30px solid rgba(255, 255, 255, 0.5);
+  border: rgba(255, 255, 255, 0.5);
+  margin-top: 5%;
+  margin-bottom: 5%;
   padding: 1.5em; }
 
-/* line 145, ../mysite/assets/css/scss/screen.scss */
+/* line 149, ../mysite/assets/css/scss/screen.scss */
 figcaption {
   font-size: 1.5em;
   line-height: 1em;
@@ -162,7 +166,7 @@ figcaption {
   padding: 0.3em;
   text-align: center; }
 
-/* line 157, ../mysite/assets/css/scss/screen.scss */
+/* line 161, ../mysite/assets/css/scss/screen.scss */
 h1 {
   font-size: 2em;
   line-height: 0.75em;
@@ -172,7 +176,7 @@ h1 {
   max-width: 18em;
   padding: 1.5em; }
 
-/* line 165, ../mysite/assets/css/scss/screen.scss */
+/* line 169, ../mysite/assets/css/scss/screen.scss */
 h2 {
   font-size: 2.5em;
   line-height: 0.6em;
@@ -186,7 +190,7 @@ h2 {
   max-width: 18em;
   padding: 0.3em; }
 
-/* line 177, ../mysite/assets/css/scss/screen.scss */
+/* line 181, ../mysite/assets/css/scss/screen.scss */
 h3 {
   font-size: 3em;
   line-height: 0.5em;
@@ -195,7 +199,7 @@ h3 {
   margin-right: 0.5em;
   margin-left: 0.5em; }
 
-/* line 184, ../mysite/assets/css/scss/screen.scss */
+/* line 188, ../mysite/assets/css/scss/screen.scss */
 h4 {
   font-size: 3.5em;
   line-height: 0.429;
@@ -204,25 +208,25 @@ h4 {
   margin-right: 0.429em;
   margin-left: 0.429em; }
 
-/* line 192, ../mysite/assets/css/scss/screen.scss */
+/* line 196, ../mysite/assets/css/scss/screen.scss */
 img {
   padding-left: 5%;
   max-width: 90%; }
 
-/* line 197, ../mysite/assets/css/scss/screen.scss */
+/* line 201, ../mysite/assets/css/scss/screen.scss */
 #nav-images {
   display: flex;
   flex-wrap: wrap;
   padding: 5px; }
-  /* line 201, ../mysite/assets/css/scss/screen.scss */
+  /* line 205, ../mysite/assets/css/scss/screen.scss */
   #nav-images li {
     flex: 1 1 400px; }
-  /* line 204, ../mysite/assets/css/scss/screen.scss */
+  /* line 208, ../mysite/assets/css/scss/screen.scss */
   #nav-images img {
     max-width: 90%;
     padding-left: 5%; }
 
-/* line 210, ../mysite/assets/css/scss/screen.scss */
+/* line 214, ../mysite/assets/css/scss/screen.scss */
 footer {
   font-size: 1em;
   line-height: 1.5em;
@@ -233,23 +237,23 @@ footer {
   flex-direction: column;
   padding-bottom: 5%;
   padding-top: 5%; }
-  /* line 219, ../mysite/assets/css/scss/screen.scss */
+  /* line 223, ../mysite/assets/css/scss/screen.scss */
   footer #contact-info {
     color: #90bd31;
     margin-top: 20%;
     text-align: center; }
-  /* line 224, ../mysite/assets/css/scss/screen.scss */
+  /* line 228, ../mysite/assets/css/scss/screen.scss */
   footer #github {
     padding-left: 15%; }
-  /* line 227, ../mysite/assets/css/scss/screen.scss */
+  /* line 231, ../mysite/assets/css/scss/screen.scss */
   footer #linked-in {
     padding-left: 75%;
     margin-top: 5%; }
-  /* line 231, ../mysite/assets/css/scss/screen.scss */
+  /* line 235, ../mysite/assets/css/scss/screen.scss */
   footer #email-icon {
     padding-left: 45%;
     margin-top: 5%; }
-  /* line 235, ../mysite/assets/css/scss/screen.scss */
+  /* line 239, ../mysite/assets/css/scss/screen.scss */
   footer img {
     width: 50px;
     height: 50px;
