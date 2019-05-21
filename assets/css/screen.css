@@ -106,7 +106,7 @@ nav a:active,
 #about-home #nav-abo,
 #other-home #nav-int {
   background: #e8c545;
-  color: #dceaef; }
+  color: black; }
 
 /* line 109, ../mysite/assets/css/scss/screen.scss */
 nav a:after {
