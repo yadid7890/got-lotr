@@ -5,51 +5,43 @@
 $foot-text: #000;
 
 $type-settings: (
-  0: (
-    font-size: 1.0em,
-    line-height: 1.5em
-  ),
-  1: (
-    font-size: 1.5em,
-    line-height: 1em
-  ),
-  2: (
-    font-size: 2.0em,
-    line-height: 0.75em
-  ),
-  3: (
-    font-size: 2.5em,
-    line-height: 0.6em
-  ),
-  4: (
-    font-size: 3.0em,
-    line-height: 0.5em
-  ),
-  5: (
-    font-size: 3.5em,
-    line-height: 0.429
-  )
+0: (
+font-size: 1.0em,
+line-height: 1.5em
+),
+1: (
+font-size: 1.5em,
+line-height: 1em
+),
+2: (
+font-size: 2.0em,
+line-height: 0.75em
+),
+3: (
+font-size: 2.5em,
+line-height: 0.6em
+),
+4: (
+font-size: 3.0em,
+line-height: 0.5em
+),
+5: (
+font-size: 3.5em,
+line-height: 0.429
+)
 );
 //!more sass
 @function type-scale($level) {
-  @return map-get(
+    @return map-get(
     map-get($type-settings, $level), 'font-size');
 }
 @function line-height($level) {
-  @return map-get(
+    @return map-get(
     map-get($type-settings, $level), 'line-height');
 }
 @mixin type-setting($level) {
-  font-size: type-scale($level);
-  line-height: line-height($level);
-}
-@mixin absolute($top: null, $right: null, $bottom: null, $left: null)
-{
-  position: absolute;
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
+    font-size: type-scale($level);
+    line-height: line-height($level);
 }
 //.foo {
 //@include absolute($top: 13px, $left: 37px);}
@@ -60,41 +52,48 @@ $color4: hsla(0%, 40%, 91%, 1); //!figcaptions pinkish
 $color5: hsla(47%, 78%, 59%, 1);//gold
 //!background code for pages
 body {
-  background: $color2;
-  background-image: radial-gradient($color5 30%, transparent 0),
-                  radial-gradient($color5 20%, transparent 0);
-                  background-size: 10px 10px;
-                  background-position: 0 0, 6px 45px;
+    background: $color2;
+    background-image: radial-gradient($color5 30%, transparent 0),
+    radial-gradient($color5 20%, transparent 0);
+    background-image: -webkit-radial-gradient($color5 30%, transparent 0),
+    -webkit-radial-gradient($color5 20%, transparent 0);
+    background-size: 10px 10px;
+    background-position: 0 0, 6px 45px;
 }
 header {
-  background-image: url("../img/space-wall.jpg");
-  background-repeat: repeat-x;
+    background-image: url("../img/space-wall.jpg");
+    background-repeat: repeat-x;
 }
 //!code for main-nav
+a {
+    text-decoration: none;
+}
 #navigation { //!nav
-  display: flex;
-  flex-wrap: row wrap;
-  @include type-setting(0);
-  border-bottom: 3px solid #47c9af;
+    display: flex;
+    -ms-flex-wrap: row wrap;
+        flex-wrap: row wrap;
+    flex-wrap: row wrap;
+    @include type-setting(0);
+    border-bottom: 3px solid #47c9af;
 }
 #main-nav li { //!
-  flex: 1 1 25%;
+    flex: 1 1 25%;
 }
 #main-nav a {/*nav element*/
-  background-color: $color2;
-  color: $color4;
-  display: block;
-  padding: 0.65625em 0; /*10.5px/16px=.65625em    .65625em is for top and bottom, 0 is for left and right*/
-  text-align: center;
-  text-decoration: none;
-  z-index: 2;
-  -webkit-transition: all .2s ease;
-  -moz-transition: all .2s ease;
-  -ms-transition: all .2s ease;
-  -o-transition: all .2s ease;
-  transition: all .2s ease;
+    background-color: $color2;
+    color: $color4;
+    display: block;
+    padding: 0.65625em 0; /*10.5px/16px=.65625em    .65625em is for top and bottom, 0 is for left and right*/
+    text-align: center;
+    text-decoration: none;
+    z-index: 2;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
     &:hover {
-      background: $color5;
+        background: $color5;
     }
 }
 nav a:active,
@@ -103,144 +102,198 @@ nav a:active,
 #got-home #nav-got,
 #about-home #nav-abo,
 #other-home #nav-int {
-  background: $color5;
-  color: black;
+    background: $color5;
+    color: black;
 }
 nav a:after {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-  width: 100%;
-  height: 120%;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  content: "";
-  -webkit-transition: all .2s ease;
-  -o-transition: all .2s ease;
-  transition: all .2s ease;
-  -webkit-transform: perspective(5px) rotateX(2deg);
-  -webkit-transform-origin: bottom;
-  -moz-transform: perspective(5px) rotateX(2deg);
-  -moz-transform-origin: bottom;
-  transform: perspective(5px) rotateX(2deg);
-  transform-origin: bottom;
+    @include position(absolute, 0)
+    z-index: -1;
+    width: 100%;
+    height: 120%;
+    @include border-top-radius(8px);
+    content: "";
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    -webkit-transform: perspective(5px) rotateX(2deg);
+    -webkit-transform-origin: bottom;
+    -moz-transform: perspective(5px) rotateX(2deg);
+    -moz-transform-origin: bottom;
+    transform: perspective(5px) rotateX(2deg);
+    transform-origin: bottom;
+}
+//!code for font family
+html {
+    font-family: $font-stack-garamond;
+    @include overflow-wrap;
 }
 //!font sizes for elements
 p {
-  @include type-setting(0);
-  border: hsla(0,0%,100%,.5);
-  margin-top: 5%;
-  margin-bottom: 5%;
-  background: hsla(47%, 78%, 59%, .8);
-  background-clip: padding-box;
-  padding: 1.5em;
+    @include type-setting(0);
+    border: hsla(0,0%,100%,.5);
+    @include margin(5% null); //!top/bottom, right/left
+    background: hsla(47%, 78%, 59%, .8);
+    background-clip: padding-box;
+    padding: 1.5em;
 }
 #got-home p,
-#lotr-home p,
-html#other-home body main section#dogs p {
-  @include type-setting(1);
-  border: hsla(0,0%,100%,.5);
-  margin-top: 5%;
-  margin-bottom: 5%;
-  padding: 1.5em;
+#lotr-home p {
+    @include type-setting(1);
+    border: hsla(0,0%,100%,.5);
+    @include margin(5% null); //!top/bottom, right/left
+    @include padding(1.5em 1.5em); //!top/bottom, right/left
 }
 figcaption {
-  @include type-setting(1);
-  border: 20px solid hsla(0,0%,100%,.5);
-  background: $color5;
-  background-clip: padding-box;
-  max-width: 18em;
-  margin-bottom: 1.0em;
-  margin-right: 1.0em;
-  margin-left: 1.0em;
-  padding: 0.3em;
-  text-align: center;
+    @include type-setting(1);
+    border: 20px solid hsla(0,0%,100%,.5);
+    background: $color5;
+    background-clip: padding-box;
+    max-width: 18em;
+    @include margin(null 1em 1em 1em); //!top, right, bottom, left
+    @include padding(0.3em 0.3em); //!top/bottom, right/left
+    text-align: center;
 }
 h1 {
-  @include type-setting(2);
-  border: 50px solid hsla(0,0%,100%,.5);
-  background: $color5;
-  background-clip: padding-box;
-  max-width: 18em;
-  padding: 1.5em;
+    @include type-setting(2);
+    border: 50px solid hsla(0,0%,100%,.5);
+    background: $color5;
+    background-clip: padding-box;
+    max-width: 18em;
+    @include padding(1.5em 1.5em); //!top/bottom, right/left
 }
 h2 {
-  @include type-setting(3);
-  margin-top: 0.6em;
-  margin-bottom: 0.6em;
-  margin-right: 0.6em;
-  margin-left: 0.6em;
-  border: 50px solid hsla(0,0%,100%,.5);
-  background: $color5;
-  background-clip: padding-box;
-  max-width: 18em;
-  padding: 0.3em;
+    @include type-setting(3);
+    @include margin(.6em .6em);
+    border: 50px solid hsla(0,0%,100%,.5);
+    background: $color5;
+    background-clip: padding-box;
+    max-width: 18em;
+    @include padding(0.3em 0.3em); //!top/bottom, right/left
 }
 h3 {
-  @include type-setting(4);
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  margin-right: 0.5em;
-  margin-left: 0.5em;
+    @include type-setting(4);
+    @include margin(.6em .6em);
 }
 h4 {
-  @include type-setting(5);
-  margin-top: 0.429em;
-  margin-bottom: 0.429em;
-  margin-right: 0.429em;
-  margin-left: 0.429em;
+    @include type-setting(5);
+    @include margin(.429em .429em);
+}
+b {
+    font-weight: bold;
+    color: black;
+}
+//!styling for blockquote
+blockquote {
+    margin-left: 50px;
+    padding: 5px;
+    position: relative;
+    width: 225px;
+}
+blockquote p {
+    @include type-setting(0);
+    margin: 5px;
+    z-index: 10;
+    position: relative;
+}
+blockquote > cite {
+    @include type-setting(1);
+    color: #AAA;
+    display: block;
+    text-align: right;
+}
+blockquote:after, blockquote:before {
+    position: absolute;
+    z-index: 1;
+    font-size: 12em;
+    color: #2ABBD5;
+    text-shadow: 2px 2px 0 #DDD;
+    font-family: serif;
+    height: 0;
+}
+blockquote:before {
+    content: "\201C";
+    top: -30px;
+    left: -55px;
+}
+blockquote:after {
+    content: "\201D";
+    bottom: 30px;
+    right: 0;
+}
+blockquote > cite:before {
+    content: "-- ";
+}
+#martin-quote {
+    background-color: #FAF205;
+    background-image: -webkit-linear-gradient(top, #FAF205 20%, #FFFC9C 100%);
+    background-image: -webkit-linear-gradient(#FAF205 20%, #FFFC9C 100%);
+    background-image: linear-gradient(#FAF205 20%, #FFFC9C 100%);
+    border-radius: 20px;
+    @include padding(15px 30px); //!top/bottom, right/left
+    position: relative;
+    margin: 0;
+    width: 225px;
 }
 //!size images for books
 img {
-  padding-left: 5%;
-  max-width: 90%;
+    padding-left: 5%;
+    max-width: 90%;
 }
 //!code for got link-photos-->flex-wrap
 #nav-images { //!ul element
-  display: flex;
-  flex-wrap: wrap;
-  padding: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    @include padding(5px 5px); //!top/bottom, right/left
     li {
-      flex: 1 1 400px;
+        flex: 1 1 400px;
     }
     img {
-      max-width: 90%;
-      padding-left: 5%;
+        max-width: 90%;
+        padding-left: 5%;
     }
+}
+//!form code
+#form-content {
+    background-color: $color5;
+    @include type-setting(0);
 }
 //!footer code
 footer {
-  @include type-setting(0);
-  background-image: url("../img/space-wall.jpg");
-  background-repeat: repeat-x;
-  color: $color2;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 5%;
-  padding-top: 5%;
+    @include type-setting(0);
+    background-image: url("../img/space-wall.jpg");
+    background-repeat: repeat-x;
+    color: $color2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    @include padding(5% null); //!top/bottom, right/left
     #contact-info {
-      color: #90bd31;
-      margin-top: 20%;
-      text-align: center;
+        color: #90bd31;
+        margin-top: 20%;
+        text-align: center;
     }
     #github {
-      padding-left: 15%;
+        padding-left: 15%;
     }
     #linked-in {
-      padding-left: 75%;
-      margin-top: 5%;
+        padding-left: 75%;
+        margin-top: 5%;
     }
     #email-icon {
-      padding-left: 45%;
-      margin-top: 5%;
+        padding-left: 45%;
+        margin-top: 5%;
     }
-  img {
-    width: 50px;
-    height: 50px;
-    display: block;
-    margin-top: 5%;
-    position: absolute;
-  }
+    img {
+        @include size(50px); //!width, height
+        display: block;
+        margin-top: 5%;
+        position: absolute;
+    }
 }

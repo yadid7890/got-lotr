@@ -54,31 +54,38 @@ a img {
 elements-of-type(html5-block) {
   display: block; }
 
-/* line 62, ../mysite/assets/css/scss/screen.scss */
+/* line 54, ../mysite/assets/css/scss/screen.scss */
 body {
   background: #567299;
   background-image: radial-gradient(#e8c545 30%, transparent 0), radial-gradient(#e8c545 20%, transparent 0);
+  background-image: -webkit-radial-gradient(#e8c545 30%, transparent 0), -webkit-radial-gradient(#e8c545 20%, transparent 0);
   background-size: 10px 10px;
   background-position: 0 0, 6px 45px; }
 
-/* line 69, ../mysite/assets/css/scss/screen.scss */
+/* line 63, ../mysite/assets/css/scss/screen.scss */
 header {
   background-image: url("../img/space-wall.jpg");
   background-repeat: repeat-x; }
 
-/* line 74, ../mysite/assets/css/scss/screen.scss */
+/* line 68, ../mysite/assets/css/scss/screen.scss */
+a {
+  text-decoration: none; }
+
+/* line 71, ../mysite/assets/css/scss/screen.scss */
 #navigation {
   display: flex;
+  -ms-flex-wrap: row wrap;
+  flex-wrap: row wrap;
   flex-wrap: row wrap;
   font-size: 1em;
   line-height: 1.5em;
   border-bottom: 3px solid #47c9af; }
 
-/* line 80, ../mysite/assets/css/scss/screen.scss */
+/* line 79, ../mysite/assets/css/scss/screen.scss */
 #main-nav li {
   flex: 1 1 25%; }
 
-/* line 83, ../mysite/assets/css/scss/screen.scss */
+/* line 82, ../mysite/assets/css/scss/screen.scss */
 #main-nav a {
   /*nav element*/
   background-color: #567299;
@@ -94,11 +101,11 @@ header {
   -ms-transition: all .2s ease;
   -o-transition: all .2s ease;
   transition: all .2s ease; }
-  /* line 96, ../mysite/assets/css/scss/screen.scss */
+  /* line 95, ../mysite/assets/css/scss/screen.scss */
   #main-nav a:hover {
     background: #e8c545; }
 
-/* line 100, ../mysite/assets/css/scss/screen.scss */
+/* line 99, ../mysite/assets/css/scss/screen.scss */
 nav a:active,
 #home #nav-hom,
 #lotr-home #nav-lot,
@@ -108,12 +115,13 @@ nav a:active,
   background: #e8c545;
   color: black; }
 
-/* line 109, ../mysite/assets/css/scss/screen.scss */
+/* line 108, ../mysite/assets/css/scss/screen.scss */
 nav a:after {
   position: absolute;
-  left: 0;
-  bottom: 0;
+  top: 0;
   right: 0;
+  bottom: 0;
+  left: 0;
   z-index: -1;
   width: 100%;
   height: 120%;
@@ -130,6 +138,12 @@ nav a:after {
   transform: perspective(5px) rotateX(2deg);
   transform-origin: bottom; }
 
+/* line 126, ../mysite/assets/css/scss/screen.scss */
+html {
+  font-family: "Garamond", "Baskerville", "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+  word-wrap: break-word;
+  overflow-wrap: break-word; }
+
 /* line 131, ../mysite/assets/css/scss/screen.scss */
 p {
   font-size: 1em;
@@ -141,10 +155,9 @@ p {
   background-clip: padding-box;
   padding: 1.5em; }
 
-/* line 140, ../mysite/assets/css/scss/screen.scss */
+/* line 139, ../mysite/assets/css/scss/screen.scss */
 #got-home p,
-#lotr-home p,
-html#other-home body main section#dogs p {
+#lotr-home p {
   font-size: 1.5em;
   line-height: 1em;
   border: rgba(255, 255, 255, 0.5);
@@ -152,7 +165,7 @@ html#other-home body main section#dogs p {
   margin-bottom: 5%;
   padding: 1.5em; }
 
-/* line 149, ../mysite/assets/css/scss/screen.scss */
+/* line 146, ../mysite/assets/css/scss/screen.scss */
 figcaption {
   font-size: 1.5em;
   line-height: 1em;
@@ -160,13 +173,13 @@ figcaption {
   background: #e8c545;
   background-clip: padding-box;
   max-width: 18em;
-  margin-bottom: 1.0em;
-  margin-right: 1.0em;
-  margin-left: 1.0em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  margin-left: 1em;
   padding: 0.3em;
   text-align: center; }
 
-/* line 161, ../mysite/assets/css/scss/screen.scss */
+/* line 156, ../mysite/assets/css/scss/screen.scss */
 h1 {
   font-size: 2em;
   line-height: 0.75em;
@@ -176,87 +189,158 @@ h1 {
   max-width: 18em;
   padding: 1.5em; }
 
-/* line 169, ../mysite/assets/css/scss/screen.scss */
+/* line 164, ../mysite/assets/css/scss/screen.scss */
 h2 {
   font-size: 2.5em;
   line-height: 0.6em;
-  margin-top: 0.6em;
-  margin-bottom: 0.6em;
-  margin-right: 0.6em;
-  margin-left: 0.6em;
+  margin: 0.6em;
   border: 50px solid rgba(255, 255, 255, 0.5);
   background: #e8c545;
   background-clip: padding-box;
   max-width: 18em;
   padding: 0.3em; }
 
-/* line 181, ../mysite/assets/css/scss/screen.scss */
+/* line 173, ../mysite/assets/css/scss/screen.scss */
 h3 {
   font-size: 3em;
   line-height: 0.5em;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  margin-right: 0.5em;
-  margin-left: 0.5em; }
+  margin: 0.6em; }
 
-/* line 188, ../mysite/assets/css/scss/screen.scss */
+/* line 177, ../mysite/assets/css/scss/screen.scss */
 h4 {
   font-size: 3.5em;
   line-height: 0.429;
-  margin-top: 0.429em;
-  margin-bottom: 0.429em;
-  margin-right: 0.429em;
-  margin-left: 0.429em; }
+  margin: 0.429em; }
 
-/* line 196, ../mysite/assets/css/scss/screen.scss */
+/* line 181, ../mysite/assets/css/scss/screen.scss */
+b {
+  font-weight: bold;
+  color: black; }
+
+/* line 186, ../mysite/assets/css/scss/screen.scss */
+blockquote {
+  margin-left: 50px;
+  padding: 5px;
+  position: relative;
+  width: 225px; }
+
+/* line 192, ../mysite/assets/css/scss/screen.scss */
+blockquote p {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 5px;
+  z-index: 10;
+  position: relative; }
+
+/* line 198, ../mysite/assets/css/scss/screen.scss */
+blockquote > cite {
+  font-size: 1.5em;
+  line-height: 1em;
+  color: #AAA;
+  display: block;
+  text-align: right; }
+
+/* line 204, ../mysite/assets/css/scss/screen.scss */
+blockquote:after, blockquote:before {
+  position: absolute;
+  z-index: 1;
+  font-size: 12em;
+  color: #2ABBD5;
+  text-shadow: 2px 2px 0 #DDD;
+  font-family: serif;
+  height: 0; }
+
+/* line 213, ../mysite/assets/css/scss/screen.scss */
+blockquote:before {
+  content: "\201C";
+  top: -30px;
+  left: -55px; }
+
+/* line 218, ../mysite/assets/css/scss/screen.scss */
+blockquote:after {
+  content: "\201D";
+  bottom: 30px;
+  right: 0; }
+
+/* line 223, ../mysite/assets/css/scss/screen.scss */
+blockquote > cite:before {
+  content: "-- "; }
+
+/* line 226, ../mysite/assets/css/scss/screen.scss */
+#martin-quote {
+  background-color: #FAF205;
+  background-image: -webkit-linear-gradient(top, #FAF205 20%, #FFFC9C 100%);
+  background-image: -webkit-linear-gradient(#FAF205 20%, #FFFC9C 100%);
+  background-image: linear-gradient(#FAF205 20%, #FFFC9C 100%);
+  border-radius: 20px;
+  padding: 15px 30px;
+  position: relative;
+  margin: 0;
+  width: 225px; }
+
+/* line 238, ../mysite/assets/css/scss/screen.scss */
 img {
   padding-left: 5%;
   max-width: 90%; }
 
-/* line 201, ../mysite/assets/css/scss/screen.scss */
+/* line 243, ../mysite/assets/css/scss/screen.scss */
 #nav-images {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 5px; }
-  /* line 205, ../mysite/assets/css/scss/screen.scss */
+  /* line 250, ../mysite/assets/css/scss/screen.scss */
   #nav-images li {
     flex: 1 1 400px; }
-  /* line 208, ../mysite/assets/css/scss/screen.scss */
+  /* line 253, ../mysite/assets/css/scss/screen.scss */
   #nav-images img {
     max-width: 90%;
     padding-left: 5%; }
 
-/* line 214, ../mysite/assets/css/scss/screen.scss */
+/* line 259, ../mysite/assets/css/scss/screen.scss */
+#form-content {
+  background-color: #e8c545;
+  font-size: 1em;
+  line-height: 1.5em; }
+
+/* line 264, ../mysite/assets/css/scss/screen.scss */
 footer {
   font-size: 1em;
   line-height: 1.5em;
   background-image: url("../img/space-wall.jpg");
   background-repeat: repeat-x;
   color: #567299;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
-  padding-bottom: 5%;
-  padding-top: 5%; }
-  /* line 223, ../mysite/assets/css/scss/screen.scss */
+  padding-top: 5%;
+  padding-bottom: 5%; }
+  /* line 277, ../mysite/assets/css/scss/screen.scss */
   footer #contact-info {
     color: #90bd31;
     margin-top: 20%;
     text-align: center; }
-  /* line 228, ../mysite/assets/css/scss/screen.scss */
+  /* line 282, ../mysite/assets/css/scss/screen.scss */
   footer #github {
     padding-left: 15%; }
-  /* line 231, ../mysite/assets/css/scss/screen.scss */
+  /* line 285, ../mysite/assets/css/scss/screen.scss */
   footer #linked-in {
     padding-left: 75%;
     margin-top: 5%; }
-  /* line 235, ../mysite/assets/css/scss/screen.scss */
+  /* line 289, ../mysite/assets/css/scss/screen.scss */
   footer #email-icon {
     padding-left: 45%;
     margin-top: 5%; }
-  /* line 239, ../mysite/assets/css/scss/screen.scss */
+  /* line 293, ../mysite/assets/css/scss/screen.scss */
   footer img {
-    width: 50px;
     height: 50px;
+    width: 50px;
     display: block;
     margin-top: 5%;
     position: absolute; }
