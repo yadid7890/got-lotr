@@ -68,7 +68,7 @@ header {
 a {
     text-decoration: none;
 }
-#navigation { //!nav
+#navigation { //!ul
     display: flex;
     -ms-flex-wrap: row wrap;
         flex-wrap: row wrap;
@@ -131,7 +131,7 @@ html {
 p {
     @include type-setting(0);
     border: hsla(0,0%,100%,.5);
-    @include margin(5% null); //!top/bottom, right/left
+    @include margin(null null 5% null); //!top/bottom, right/left
     background: hsla(47%, 78%, 59%, .8);
     background-clip: padding-box;
     padding: 1.5em;
@@ -184,10 +184,9 @@ b {
 }
 //!styling for blockquote
 blockquote {
-    margin-left: 50px;
-    padding: 5px;
     position: relative;
-    width: 225px;
+    width: 55%;
+    margin: 25%;
 }
 blockquote p {
     @include type-setting(0);
@@ -197,7 +196,7 @@ blockquote p {
 }
 blockquote > cite {
     @include type-setting(1);
-    color: #AAA;
+    background: rgba(232, 197, 69, 0.8);
     display: block;
     text-align: right;
 }
@@ -212,7 +211,7 @@ blockquote:after, blockquote:before {
 }
 blockquote:before {
     content: "\201C";
-    top: -30px;
+    top: -55px;
     left: -55px;
 }
 blockquote:after {
@@ -223,16 +222,42 @@ blockquote:after {
 blockquote > cite:before {
     content: "-- ";
 }
-#martin-quote {
-    background-color: #FAF205;
-    background-image: -webkit-linear-gradient(top, #FAF205 20%, #FFFC9C 100%);
-    background-image: -webkit-linear-gradient(#FAF205 20%, #FFFC9C 100%);
-    background-image: linear-gradient(#FAF205 20%, #FFFC9C 100%);
-    border-radius: 20px;
-    @include padding(15px 30px); //!top/bottom, right/left
-    position: relative;
-    margin: 0;
-    width: 225px;
+//!code for button on main page that leads to survey
+@mixin rounded($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin linear-gradient($from, $to) {
+    /* Fallback for sad browsers */
+    background-color: $to;
+    /* Mozilla Firefox */
+    background-image:
+        -moz-linear-gradient($from, $to);
+    /* Opera */
+    background-image:
+        -o-linear-gradient($from, $to);
+    /* WebKit (Safari 4+, Chrome 1+) */
+    background-image:
+        -webkit-gradient(linear, left top, left bottom, color-stop(0, $from), color-stop(1, $to));
+    /* WebKit (Chrome 11+) */
+    background-image:
+        -webkit-linear-gradient($from, $to);
+    /* IE10 */
+    background-image:
+        -ms-linear-gradient($from, $to);
+    /* W3C */
+    background-image: linear-gradient($from, $to);
+}
+#form-sect {
+    margin-bottom: 15%;
+}
+#button {
+    padding: 25px 25px;
+    margin: 25%;
+    color: $color1;
+    @include rounded(5%);
+    @include linear-gradient(#42b3e2, #1a6798);
 }
 //!size images for books
 img {
@@ -280,7 +305,28 @@ footer {
         text-align: center;
     }
     #github {
-        padding-left: 15%;
+        padding-left: 10%;
+    }
+    #linked-in {
+        padding-left: 65%;
+        margin-top: 5%;
+    }
+    #email-icon {
+        padding-left: 35%;
+        margin-top: 5%;
+    }
+    img {
+        @include size(50px); //!width, height
+        display: block;
+        margin-top: 5%;
+        position: absolute;
+    }
+}
+//!media query code!
+@media screen and (min-width: 480px) {
+    #nav-images img {
+        max-width: 80%;
+        padding-left: 5%;
     }
     #linked-in {
         padding-left: 75%;
@@ -290,10 +336,85 @@ footer {
         padding-left: 45%;
         margin-top: 5%;
     }
-    img {
-        @include size(50px); //!width, height
-        display: block;
-        margin-top: 5%;
-        position: absolute;
+}
+@media screen and (min-width: 600px) {
+    #nav-images img {
+        max-width: 60%;
+        padding-left: 20%;
+    }
+    form {
+        padding-left: 10%;
+    }
+}
+@media screen and (min-width: 800px) {
+    html {
+      padding: 5%;
+    }
+    #main-nav a {/*nav element*/
+      font-size: 1.3em;
+  }
+  #nav-images img {
+      max-width: 50%;
+      padding-left: 25%;
+
+      figcaption {
+          padding: 2.5%;
+      }
+  }
+}
+@media screen and (min-width: 1000px) {
+    /*code for nav images*/
+    #nav-images {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5px;
+        li {
+            flex: 0 1 450px;
+        }
+        img {
+            max-width: 70%;
+            padding-left: 20%;
+        }
+        figcaption {
+            margin-left: 30%;
+            margin-right: 20%;
+        }
+    }
+}
+@media screen and (min-width: 1200px) {
+    #nav-images li {
+        flex: 0 1 395px;
+        img {
+            max-width: 75%;
+            padding-left: 20%;
+        }
+        figcaption {
+            margin-left: 30%;
+            margin-right: 8%;
+        }
+    }
+}
+@media screen and (min-width: 1400px) {
+    #nav-images li {
+        flex: 0 1 350px;
+        img {
+            max-width: 80%;
+        }
+        figcaption {
+            margin-left: 25%;
+            margin-right: 5%;
+        }
+    }
+}
+@media screen and (min-width: 1600px) {
+    #nav-images li {
+        flex: 0 1 380px;
+        img {
+            max-width: 85%;
+        }
+        figcaption {
+            margin-left: 25%;
+            margin-right: 0%;
+        }
     }
 }

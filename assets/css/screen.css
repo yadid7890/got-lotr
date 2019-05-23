@@ -149,7 +149,6 @@ p {
   font-size: 1em;
   line-height: 1.5em;
   border: rgba(255, 255, 255, 0.5);
-  margin-top: 5%;
   margin-bottom: 5%;
   background: rgba(232, 197, 69, 0.8);
   background-clip: padding-box;
@@ -219,12 +218,11 @@ b {
 
 /* line 186, ../mysite/assets/css/scss/screen.scss */
 blockquote {
-  margin-left: 50px;
-  padding: 5px;
   position: relative;
-  width: 225px; }
+  width: 55%;
+  margin: 25%; }
 
-/* line 192, ../mysite/assets/css/scss/screen.scss */
+/* line 191, ../mysite/assets/css/scss/screen.scss */
 blockquote p {
   font-size: 1em;
   line-height: 1.5em;
@@ -232,15 +230,15 @@ blockquote p {
   z-index: 10;
   position: relative; }
 
-/* line 198, ../mysite/assets/css/scss/screen.scss */
+/* line 197, ../mysite/assets/css/scss/screen.scss */
 blockquote > cite {
   font-size: 1.5em;
   line-height: 1em;
-  color: #AAA;
+  background: rgba(232, 197, 69, 0.8);
   display: block;
   text-align: right; }
 
-/* line 204, ../mysite/assets/css/scss/screen.scss */
+/* line 203, ../mysite/assets/css/scss/screen.scss */
 blockquote:after, blockquote:before {
   position: absolute;
   z-index: 1;
@@ -250,40 +248,55 @@ blockquote:after, blockquote:before {
   font-family: serif;
   height: 0; }
 
-/* line 213, ../mysite/assets/css/scss/screen.scss */
+/* line 212, ../mysite/assets/css/scss/screen.scss */
 blockquote:before {
   content: "\201C";
-  top: -30px;
+  top: -55px;
   left: -55px; }
 
-/* line 218, ../mysite/assets/css/scss/screen.scss */
+/* line 217, ../mysite/assets/css/scss/screen.scss */
 blockquote:after {
   content: "\201D";
   bottom: 30px;
   right: 0; }
 
-/* line 223, ../mysite/assets/css/scss/screen.scss */
+/* line 222, ../mysite/assets/css/scss/screen.scss */
 blockquote > cite:before {
   content: "-- "; }
 
-/* line 226, ../mysite/assets/css/scss/screen.scss */
-#martin-quote {
-  background-color: #FAF205;
-  background-image: -webkit-linear-gradient(top, #FAF205 20%, #FFFC9C 100%);
-  background-image: -webkit-linear-gradient(#FAF205 20%, #FFFC9C 100%);
-  background-image: linear-gradient(#FAF205 20%, #FFFC9C 100%);
-  border-radius: 20px;
-  padding: 15px 30px;
-  position: relative;
-  margin: 0;
-  width: 225px; }
+/* line 252, ../mysite/assets/css/scss/screen.scss */
+#form-sect {
+  margin-bottom: 15%; }
 
-/* line 238, ../mysite/assets/css/scss/screen.scss */
+/* line 255, ../mysite/assets/css/scss/screen.scss */
+#button {
+  padding: 25px 25px;
+  margin: 25%;
+  color: #24799e;
+  -webkit-border-radius: 5%;
+  -moz-border-radius: 5%;
+  border-radius: 5%;
+  /* Fallback for sad browsers */
+  background-color: #1a6798;
+  /* Mozilla Firefox */
+  background-image: -moz-linear-gradient(#42b3e2, #1a6798);
+  /* Opera */
+  background-image: -o-linear-gradient(#42b3e2, #1a6798);
+  /* WebKit (Safari 4+, Chrome 1+) */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #42b3e2), color-stop(1, #1a6798));
+  /* WebKit (Chrome 11+) */
+  background-image: -webkit-linear-gradient(#42b3e2, #1a6798);
+  /* IE10 */
+  background-image: -ms-linear-gradient(#42b3e2, #1a6798);
+  /* W3C */
+  background-image: linear-gradient(#42b3e2, #1a6798); }
+
+/* line 263, ../mysite/assets/css/scss/screen.scss */
 img {
   padding-left: 5%;
   max-width: 90%; }
 
-/* line 243, ../mysite/assets/css/scss/screen.scss */
+/* line 268, ../mysite/assets/css/scss/screen.scss */
 #nav-images {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -291,21 +304,21 @@ img {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 5px; }
-  /* line 250, ../mysite/assets/css/scss/screen.scss */
+  /* line 275, ../mysite/assets/css/scss/screen.scss */
   #nav-images li {
     flex: 1 1 400px; }
-  /* line 253, ../mysite/assets/css/scss/screen.scss */
+  /* line 278, ../mysite/assets/css/scss/screen.scss */
   #nav-images img {
     max-width: 90%;
     padding-left: 5%; }
 
-/* line 259, ../mysite/assets/css/scss/screen.scss */
+/* line 284, ../mysite/assets/css/scss/screen.scss */
 #form-content {
   background-color: #e8c545;
   font-size: 1em;
   line-height: 1.5em; }
 
-/* line 264, ../mysite/assets/css/scss/screen.scss */
+/* line 289, ../mysite/assets/css/scss/screen.scss */
 footer {
   font-size: 1em;
   line-height: 1.5em;
@@ -321,28 +334,123 @@ footer {
   flex-direction: column;
   padding-top: 5%;
   padding-bottom: 5%; }
-  /* line 277, ../mysite/assets/css/scss/screen.scss */
+  /* line 302, ../mysite/assets/css/scss/screen.scss */
   footer #contact-info {
     color: #90bd31;
     margin-top: 20%;
     text-align: center; }
-  /* line 282, ../mysite/assets/css/scss/screen.scss */
+  /* line 307, ../mysite/assets/css/scss/screen.scss */
   footer #github {
-    padding-left: 15%; }
-  /* line 285, ../mysite/assets/css/scss/screen.scss */
+    padding-left: 10%; }
+  /* line 310, ../mysite/assets/css/scss/screen.scss */
   footer #linked-in {
-    padding-left: 75%;
+    padding-left: 65%;
     margin-top: 5%; }
-  /* line 289, ../mysite/assets/css/scss/screen.scss */
+  /* line 314, ../mysite/assets/css/scss/screen.scss */
   footer #email-icon {
-    padding-left: 45%;
+    padding-left: 35%;
     margin-top: 5%; }
-  /* line 293, ../mysite/assets/css/scss/screen.scss */
+  /* line 318, ../mysite/assets/css/scss/screen.scss */
   footer img {
     height: 50px;
     width: 50px;
     display: block;
     margin-top: 5%;
     position: absolute; }
+
+@media screen and (min-width: 480px) {
+  /* line 327, ../mysite/assets/css/scss/screen.scss */
+  #nav-images img {
+    max-width: 80%;
+    padding-left: 5%; }
+  /* line 331, ../mysite/assets/css/scss/screen.scss */
+  #linked-in {
+    padding-left: 75%;
+    margin-top: 5%; }
+  /* line 335, ../mysite/assets/css/scss/screen.scss */
+  #email-icon {
+    padding-left: 45%;
+    margin-top: 5%; } }
+
+@media screen and (min-width: 600px) {
+  /* line 341, ../mysite/assets/css/scss/screen.scss */
+  #nav-images img {
+    max-width: 60%;
+    padding-left: 20%; }
+  /* line 345, ../mysite/assets/css/scss/screen.scss */
+  form {
+    padding-left: 10%; } }
+
+@media screen and (min-width: 800px) {
+  /* line 350, ../mysite/assets/css/scss/screen.scss */
+  html {
+    padding: 5%; }
+  /* line 353, ../mysite/assets/css/scss/screen.scss */
+  #main-nav a {
+    /*nav element*/
+    font-size: 1.3em; }
+  /* line 356, ../mysite/assets/css/scss/screen.scss */
+  #nav-images img {
+    max-width: 50%;
+    padding-left: 25%; }
+    /* line 360, ../mysite/assets/css/scss/screen.scss */
+    #nav-images img figcaption {
+      padding: 2.5%; } }
+
+@media screen and (min-width: 1000px) {
+  /*code for nav images*/
+  /* line 367, ../mysite/assets/css/scss/screen.scss */
+  #nav-images {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px; }
+    /* line 371, ../mysite/assets/css/scss/screen.scss */
+    #nav-images li {
+      flex: 0 1 450px; }
+    /* line 374, ../mysite/assets/css/scss/screen.scss */
+    #nav-images img {
+      max-width: 70%;
+      padding-left: 20%; }
+    /* line 378, ../mysite/assets/css/scss/screen.scss */
+    #nav-images figcaption {
+      margin-left: 30%;
+      margin-right: 20%; } }
+
+@media screen and (min-width: 1200px) {
+  /* line 385, ../mysite/assets/css/scss/screen.scss */
+  #nav-images li {
+    flex: 0 1 395px; }
+    /* line 387, ../mysite/assets/css/scss/screen.scss */
+    #nav-images li img {
+      max-width: 75%;
+      padding-left: 20%; }
+    /* line 391, ../mysite/assets/css/scss/screen.scss */
+    #nav-images li figcaption {
+      margin-left: 30%;
+      margin-right: 8%; } }
+
+@media screen and (min-width: 1400px) {
+  /* line 398, ../mysite/assets/css/scss/screen.scss */
+  #nav-images li {
+    flex: 0 1 350px; }
+    /* line 400, ../mysite/assets/css/scss/screen.scss */
+    #nav-images li img {
+      max-width: 80%; }
+    /* line 403, ../mysite/assets/css/scss/screen.scss */
+    #nav-images li figcaption {
+      margin-left: 25%;
+      margin-right: 5%; } }
+
+@media screen and (min-width: 1600px) {
+  /* line 410, ../mysite/assets/css/scss/screen.scss */
+  #nav-images li {
+    flex: 0 1 380px; }
+    /* line 412, ../mysite/assets/css/scss/screen.scss */
+    #nav-images li img {
+      max-width: 85%; }
+    /* line 415, ../mysite/assets/css/scss/screen.scss */
+    #nav-images li figcaption {
+      margin-left: 25%;
+      margin-right: 0%; } }
 
 /*# sourceMappingURL=screen.css.map */
